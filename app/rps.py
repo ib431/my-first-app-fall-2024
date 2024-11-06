@@ -1,12 +1,15 @@
 # the "app/rps.py" file (v1)...
 
+from random import choice
+VALID_OPTIONS = ["rock", "paper", "scissors"]
+
 #
 # USER SELECTION
 #
 
 u = input("Please choose one of 'Rock', 'Paper', or 'Scissors': ").lower()
 print("USER CHOICE:", u)
-if u not in ["rock", "paper", "scissors"]:
+if u not in VALID_OPTIONS:
     print("OOPS, TRY AGAIN")
     exit()
 
@@ -14,9 +17,7 @@ if u not in ["rock", "paper", "scissors"]:
 # COMPUTER SELECTION
 #
 
-from random import choice
-
-c = choice(["rock", "paper", "scissors"])
+c = choice(VALID_OPTIONS)
 print("COMPUTER CHOICE:", c)
 
 #
