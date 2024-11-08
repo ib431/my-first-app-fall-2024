@@ -7,3 +7,5 @@ plotly
 pandas
 
 python-dotenv
+
+sengrid==6.5.0
