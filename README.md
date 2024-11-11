@@ -70,3 +70,12 @@ Run the email sending functionality:
 ```sh
 python app/email_service.py
 ```
+
+
+
+## Testing
+
+Run tests: 
+```sh
+pytest
+```
