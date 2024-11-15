@@ -17,5 +17,5 @@ def test_winners():
     assert determine_outcome(u="paper", c="scissors") == "COMPUTER WINS"
 
     assert determine_outcome(u="scissors", c="scissors") == "TIE GAME"
-    assert determine_outcome(u="scissors", c="paper") == " USER WINS"
+    assert determine_outcome(u="scissors", c="paper") == "USER WINS"
     assert determine_outcome(u="scissors", c="rock") == "COMPUTER WINS"
