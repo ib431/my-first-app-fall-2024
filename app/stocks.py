@@ -7,6 +7,7 @@ from plotly.express import line
 
 
 from app.alpha_service import API_KEY
+from app.email_service import send_mail_with_mailgun
 
 
 def fetch_stocks_csv(symbol):
@@ -71,3 +72,11 @@ if __name__ == "__main__":
                 title=f"Stock Prices ({symbol})",
             labels= {"x": "Date", "y": "Stock Price ($)"})
     fig.show()
+
+    # SEND EMAIL
+
+    latest_price = first_row['adjusted_close']
+
+    send_mail_with_mailgun(subject="Stocks Report",
+        html_content=f"Latest price for {symbol} is {latest_price}"
+    )
