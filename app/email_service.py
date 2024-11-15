@@ -37,5 +37,5 @@ def send_mail_with_mailgun(recipient_address=MAILGUN_SENDER_ADDRESS,
     except requests.exceptions.RequestException as e:
         print(f"Error sending email: {str(e)}")
 
-
-send_mail_with_mailgun()
+if __name__ == "__main__":
+    send_mail_with_mailgun()
