@@ -10,6 +10,16 @@ from plotly.express import line
 
 from app.alpha_service import API_KEY
 
+def to_pct(my_number):
+    """
+    Formats a decimal number as a percentage, rounded to 4 decimal places, with a percent sign.
+
+    Param my_number (float) like 0.95555555555
+
+    Returns (str) like '95.5556%'
+    """
+    return f"{(my_number * 100):.2f}%"
+
 
 def fetch_unemployment_json():
 
