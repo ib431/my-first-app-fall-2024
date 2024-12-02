@@ -10,7 +10,7 @@ from plotly.express import line
 
 from app.alpha_service import API_KEY
 
-def to_pct(my_number):
+def format_pct(my_number):
     """
     Formats a decimal number as a percentage, rounded to 4 decimal places, with a percent sign.
 
