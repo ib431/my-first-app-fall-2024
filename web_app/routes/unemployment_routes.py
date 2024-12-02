@@ -3,7 +3,7 @@
 
 from flask import Blueprint, request, render_template, redirect, flash
 
-from app.unemployment import fetch_unemployment_data, format_pct
+from app.unemployment import fetch_unemployment_json, format_pct
 
 unemployment_routes = Blueprint("unemployment_routes", __name__)
 
@@ -13,7 +13,7 @@ def unemployment_dashboard():
     print("UNEMPLOYMENT DASHBOARD...")
 
     try:
-        data = fetch_unemployment_data()
+        data = fetch_unemployment_json()
         latest = data[0]
         latest_rate_pct = format_pct(float(latest["value"]))
         latest_date = latest["date"]
@@ -39,7 +39,7 @@ def unemployment_api():
     print("UNEMPLOYMENT DATA (API)...")
 
     try:
-        data = fetch_unemployment_data()
+        data = fetch_unemployment_json()
         return data
     except Exception as err:
         print('OOPS', err)
